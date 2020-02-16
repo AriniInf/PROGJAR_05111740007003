@@ -15,7 +15,7 @@ while True:
     print(f"connection from {client_address}")
     # Receive the data in small chunks and retransmit it
     request = connection.recv(1024)
-    file = open(request.decode('ascii'),"rb")
+    file = open(request.decode(),"rb")
     print("request received")
     while True:
         data = file.read(1024)

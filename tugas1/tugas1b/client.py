@@ -13,7 +13,7 @@ try:
     # Send data
     message = 'progjar.txt'
     print(f"sending request")
-    sock.sendall(message.encode('ascii'))
+    sock.sendall(message.encode())
     # Look for the response
     amount_received = 0
     file = open("receive.txt","wb")
