@@ -16,7 +16,7 @@ while True:
     connection, client_address = sock.accept()
 
     print(f"connection from {client_address}")
-    file = open("recv.txt","wb")
+    file = open("recieve.txt","wb")
    
     # Receive the data in small chunks and retransmit it
     amount_received = 0
