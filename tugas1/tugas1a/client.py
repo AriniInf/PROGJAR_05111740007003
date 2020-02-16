@@ -9,19 +9,19 @@ server_address = ('localhost', 10000)
 print(f"connecting to {server_address}")
 sock.connect(server_address)
 
+# Send data
+file = open("progjar.txt","rb")
+
 try:
-    # Send data
-    file = open("progjar.txt","rb")
-    data = file.read(1024)
-    print("sending file....")
-    
     while True:
+        data = file.read(1024)
+        print("sending file....")
         if not data:
             break
         sock.send(data)
     print("file sent")
     file.close()
-    
+
 finally:
     print("closing")
     sock.close()

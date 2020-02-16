@@ -9,13 +9,14 @@ sock.bind(server_address)
 # Listen for incoming connections
 sock.listen(1)
 
-file = open("recv.txt","wb")
 
 while True:
     # Wait for a connection
     print("waiting for a connection")
     connection, client_address = sock.accept()
+
     print(f"connection from {client_address}")
+    file = open("recv.txt","wb")
    
     # Receive the data in small chunks and retransmit it
     amount_received = 0
@@ -24,8 +25,9 @@ while True:
         amount_received += len(data)
         print("receiving file....")
         #print(f"{data}")
-        file.write(data)
-        break
+        if data:
+            file.write(data)
+        else: break
 
     file.close()
     print('Successfully get the file')
