@@ -20,6 +20,7 @@ while True:
    
     # Receive the data in small chunks and retransmit it
     amount_received = 0
+    
     while True:
         data = connection.recv(1024)
         amount_received += len(data)

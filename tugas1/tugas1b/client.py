@@ -16,11 +16,12 @@ try:
     sock.sendall(message.encode())
     # Look for the response
     amount_received = 0
+    amount_expected = len(message)
     file = open("receive.txt","wb")
     
-    while True: 
-        data = sock.recv(1024)
-        if data:          
+    while True:    
+        if amount_received < amount_expected:  
+            data = sock.recv(1024)        
             amount_received += len(data)
             file.write(data)
             print("file received")
