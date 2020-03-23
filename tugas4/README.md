@@ -1,15 +1,8 @@
 # Tugas 4
-
+'''
 - melihat list file (list)
 - meletakkan file (upload)
 - mengambil file (download)
-
-## PROTOCOL FORMAT
-
-string terbagi menjadi 2 bagian, dipisahkan oleh spasi
-COMMAND spasi PARAMETER spasi PARAMETER ...
-
-## FITUR
 
 - list : untuk list file pada direktori tertentu
   request : list
@@ -30,3 +23,4 @@ COMMAND spasi PARAMETER spasi PARAMETER ...
 
 - jika perintah tidak dikenali akan merespon dengan Perintah salah
 
+'''
