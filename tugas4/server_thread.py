@@ -48,6 +48,7 @@ class Server(threading.Thread):
 def main():
     svr = Server()
     svr.start()
+    print('mencari koneksi')
 
 
 if __name__ == "__main__":

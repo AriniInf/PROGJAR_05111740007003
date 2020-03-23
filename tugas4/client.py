@@ -21,7 +21,6 @@ def download(filename, simpan_nama):
     massage = json.dumps(data)
     pkt_str = kirim_terima(massage)
     paket = json.loads(pkt_str)
-    print('---------------')
     if(paket['respon']=='Berhasil'):
         print(f'saving file to {simpan_nama}')
         isi = b64decode(paket['isi'])
@@ -55,7 +54,7 @@ def kirim_terima(massage):
     sock.connect(server_address)
 
     try:
-        logging.warning(f"[CLIENT] sending {massage}")
+        logging.warning(f"CLIENT sending {massage}")
         sock.sendall(massage.encode())
         sock.shutdown(socket.SHUT_WR)
         
