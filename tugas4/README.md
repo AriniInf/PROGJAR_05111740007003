@@ -1,5 +1,5 @@
 # Tugas 4
-'''
+
 - melihat list file (list)
 - meletakkan file (upload)
 - mengambil file (download)
@@ -23,4 +23,3 @@
 
 - jika perintah tidak dikenali akan merespon dengan Perintah salah
 
-'''
