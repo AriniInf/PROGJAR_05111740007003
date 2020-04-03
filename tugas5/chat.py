@@ -105,8 +105,7 @@ class Chat:
 
 	def logout(self, sessionid):
 		del self.sessions[sessionid]
-		msgs = "logout success"
-		return {'status': 'OK', 'messages': msgs}
+		return {'status': 'OK', 'messages': "logout success"}
 
 if __name__=="__main__":
 	j = Chat()
