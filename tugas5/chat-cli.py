@@ -28,7 +28,7 @@ class ChatClient:
                 return self.sendmessage(usernameto,message)
             elif (command=='inbox'):
                 return self.inbox()
-            elif (command=='list_user'):
+            elif (command=='user_aktif'):
                 return self.list()
             elif (command=='logout'):
                 return self.logout()
@@ -81,10 +81,10 @@ class ChatClient:
     def list(self):
         if (self.tokenid==""):
             return "Error, not authorized"
-        string="list_user {} \r\n" . format(self.tokenid)
+        string="user_aktif {} \r\n" . format(self.tokenid)
         result = self.sendstring(string)
         if result['status']=='OK':
-            return "list pengguna: {}" . format(json.dumps(result['messages']))
+            return "user aktif: {}" . format(json.dumps(result['message']))
         else:
             return "Error, {}" . format(result['message'])
 

@@ -37,10 +37,10 @@ class Chat:
 				username = self.sessions[sessionid]['username']
 				logging.warning("INBOX: {}" . format(sessionid))
 				return self.get_inbox(username)
-			elif (command=='list_user'):
+			elif (command=='user_aktif'):
 				sessionid = j[1].strip()
 				logging.warning("LIST USER: {}" . format(sessionid))
-				return self.list_user()
+				return self.user_aktif()
 			elif (command=='logout'):
 				sessionid = j[1].strip()
 				logging.warning("LOGOUT: {}" . format(sessionid))
@@ -99,9 +99,12 @@ class Chat:
 			
 		return {'status': 'OK', 'messages': msgs}
 		
-	def list_user(self):
-		list_user = {'list_user': {}}
-		return {'status': 'OK', 'messages': list(self.users)}
+	def user_aktif(self):
+		token = list(self.sessions.keys())
+		user_aktif = ""
+		for i in token:
+			user_aktif = user_aktif + self.sessions[i]['username']+ ", "
+		return {'status': 'OK', 'message': '{}' .format(user_aktif)}
 
 	def logout(self, sessionid):
 		del self.sessions[sessionid]
